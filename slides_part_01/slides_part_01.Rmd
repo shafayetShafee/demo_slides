@@ -1,0 +1,167 @@
+---
+title: "Presentation title"
+subtitle: "Presentation subtitle"
+author: "Author Name"
+institute: "NHS Organisation"
+date: "Presentation Date"
+output:
+  xaringan::moon_reader:
+    css: 
+      - default
+      - css/nhsr.css
+      - css/nhsr-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      after_body: [css/insert-logo.html]
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+library(tidyverse)
+library(NHSRtheme)
+# set default options
+opts_chunk$set(echo = FALSE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+
+# uncomment the following lines if you want to use the NHS-R theme colours by default
+# scale_fill_continuous <- partial(scale_fill_nhs, discrete = FALSE)
+# scale_fill_discrete <- partial(scale_fill_nhs, discrete = TRUE)
+# scale_colour_continuous <- partial(scale_colour_nhs, discrete = FALSE)
+# scale_colour_discrete <- partial(scale_colour_nhs, discrete = TRUE)
+```
+
+class: title-slide, left, bottom
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+---
+class: inverse, middle, center
+
+# An inverse slide
+
+Often used for transitions
+
+???
+This is an example of presenter notes.
+
+---
+class: center, middle
+
+# About Me
+
+<img style="border-radius: 50%" src="https://github.com/shafayetShafee.png" width="170px"/>
+
+<p style="font-size: 35px; font-weight: bold"> Shafayet Khan Shafee </p>
+<p style="font-size: 30px; font-weight: bold"> Undergraduate Student </p>
+
+<p style="font-size: 25px; font-weight: 500"> University of Dhaka </p>
+<p style="font-size: 25px; font-weight: 500"> Uttara, Dhaka </p>
+
+[`r icons::fontawesome("github", )` @shafayet_shafee](https://github.com/shafayetShafee) [`r icons::fontawesome("twitter", )` @shafayet_shafee](https://twitter.com/shafayet_shafee)
+
+
+
+---
+
+# A slide where bullets appear
+
+--
+
+* first point
+
+--
+
+* second point
+
+--
+
+* third point
+
+---
+
+class: center, middle
+
+# Slide with centered content in the middle
+
+This content is also centered and in the middle of the slide.
+
+---
+
+class: center, middle
+
+# Slide with some text aligned
+
+.left[We can start writing a sentence on the left]
+.right[and on the right.]
+
+
+---
+
+# First Heading 
+
+--
+
+## Second heading
+
+--
+
+### third heading
+
+--
+
+---
+
+.pull-left[
+# Some content on the left
+]
+
+--
+
+.pull-right[
+# Some content on the right
+]
+
+---
+
+.pull-left[
+
+.pull-left[
+# First column
+]
+.pull-right[
+# Second column
+]
+
+]
+
+.pull-right[
+
+.pull-left[
+# third column
+]
+.pull-right[
+# Fourth column
+]
+
+]
+
+---
+
+```{r echo=TRUE}
+NHSRdatasets::LOS_model %>% 
+  head() #<<
+```
+
